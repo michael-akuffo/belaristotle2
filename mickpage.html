@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: black;
+      color: white;
+}
+body:hover{
+    background: #d915ff;
+    transition-duration:1s;
+}
+    .tabs {
+      display: flex;
+      gap: 10px;
+    }
+    .tab-button {
+      padding: 10px 20px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;      
+      border-radius: 5px;
+    }
+    .tab-button.active {
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+    }
+    .tab-content {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+    }
+    .tab-content.active {
+      display: block;
+      color: black;
+    }
+    .google{
+        color: black;
+        text-decoration: none;
+    }
+    img{
+        height: 25%;
+        width: 100%;
+        
+    }
+
+        </style>
+        <h1>MyProj4</h1>
+
+  <div class="tabs">
+    <button class="tab-button active" data-tab="tab1">Home</button>
+    <button class="tab-button" data-tab="tab2">Code</button>
+    <button class="tab-button" data-tab="tab3">Others</button>
+  </div>
+
+  <div id="tab1" class="tab-content active">
+      <img src="content://com.android.externalstorage.documents/tree/primary%3AMy%20projects/document/primary%3AMy%20projects%2FSnapchat-1911310936_1.jpg" alt="">
+    <p>Programming is a very interesting field of IT. Almost all technologies cannot work without programming. Programming is therefore the foundation of all tech available</p>
+  </div>
+
+  <div id="tab2" class="tab-content">
+      <img src="content://com.android.externalstorage.documents/tree/primary%3AMy%20projects/document/primary%3AMy%20projects%2Fapplications-of-computer-programming.jpg" alt="">
+    <p>There are several programming languages.Someof them are;<br>Python,Kolin, Ruby,PHP,HTML/CSS, JavaScript,Java,C,C++,C# and many more</p>
+  </div>
+
+  <div id="tab3" class="tab-content">
+      <img src="content://com.android.externalstorage.documents/tree/primary%3AMy%20projects/document/primary%3AMy%20projects%2Fjuanjo-jaramillo-mZnx9429i94-unsplash-1024x683.jpg" alt="">
+    <p>Visit the below website to know more about programming</p>
+    <ul>
+        <li><a href="https://www.coursera.org/articles/what-is-programming" class="google">Visit website</a></li>
+    </ul>
+  </div>
+        <script>
+            const buttons = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const target = button.getAttribute('data-tab');
+
+        // Remove 'active' class from all buttons and contents
+        buttons.forEach(btn => btn.classList.remove('active'));
+        contents.forEach(content => content.classList.remove('active'));
+
+        // Add 'active' class to clicked button and corresponding content
+        button.classList.add('active');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+
+        </script>
+    </body>
+</html>
